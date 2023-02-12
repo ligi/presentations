@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  {% seo %}
+
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "/apple-touch-icon.png" | prepend: site.baseurl }}" />
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "/favicon-32x32.png" | prepend: site.baseurl }}" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ "/favicon-16x16.png" | prepend: site.baseurl }}" />
+  <link rel="manifest" href="{{ "/site.webmanifest" | prepend: site.baseurl }}" />
+
+  <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/vendor/reveal.js/css/reveal.css" | prepend: site.baseurl }}" />
+  {% if page.theme %}
+  <link rel="stylesheet" href="{{ "/assets/vendor/reveal.js/css/theme/" | prepend: site.baseurl | append: page.theme | append: '.css' }}" id="theme" />
+  {% else %}
+  <link rel="stylesheet" href="{{ "/assets/vendor/reveal.js/css/theme/black.css" | prepend: site.baseurl }}" id="theme" />
+  {% endif %}
+
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="{{ "/assets/vendor/reveal.js/lib/css/zenburn.css" | prepend: site.baseurl }}" />
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? '{{ "/assets/vendor/reveal.js/css/print/pdf.css" | prepend: site.baseurl }}' : '{{ "/assets/vendor/reveal.js/css/print/paper.css" | prepend: site.baseurl }}';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      {{ content }}
+    </div>
+  </div>
+
+  <script src="{{ "/assets/vendor/reveal.js/js/reveal.js" | prepend: site.baseurl }}"></script>
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+
+      // Display presentation control arrows
+      controls: true,
+
+      // Help the user learn the controls by providing hints, for example by
+      // bouncing the down arrow when they first encounter a vertical slide
+      controlsTutorial: true,
+
+      // Determines where controls appear, "edges" or "bottom-right"
+      controlsLayout: 'bottom-right',
+
+      // Visibility rule for backwards navigation arrows; "faded", "hidden"
+      // or "visible"
+      controlsBackArrows: 'faded',
+
+      // Display a presentation progress bar
+      progress: true,
+
+      // Display the page number of the current slide
+      slideNumber: false,
+
+      // Add the current slide number to the URL hash so that reloading the
+      // page/copying the URL will return you to the same slide
+      hash: false,
+
+      // Push each slide change to the browser history. Implies `hash: true`
+      history: true,
+
+      // Enable keyboard shortcuts for navigation
+      keyboard: true,
+
+      // Enable the slide overview mode
+      overview: true,
+
+      // Vertical centering of slides
+      center: false,
+
+      // Enables touch navigation on devices with touch input
+      touch: true,
+
+      // Loop the presentation
+      loop: false,
+
+      // Change the presentation direction to be RTL
+      rtl: false,
+
+      // See https://github.com/hakimel/reveal.js/#navigation-mode
+      navigationMode: 'default',
+
+      // Randomizes the order of slides each time the presentation loads
+      shuffle: false,
+
+      // Turns fragments on and off globally
+      fragments: true,
+
+      // Flags whether to include the current fragment in the URL,
+      // so that reloading brings you to the same fragment position
+      fragmentInURL: false,
+
+      // Flags if the presentation is running in an embedded mode,
+      // i.e. contained within a limited portion of the screen
+      embedded: false,
+
+      // Flags if we should show a help overlay when the questionmark
+      // key is pressed
+      help: true,
+
+      // Flags if speaker notes should be visible to all viewers
+      showNotes: false,
+
+      // Global override for autoplaying embedded media (video/audio/iframe)
+      // - null: Media will only autoplay if data-autoplay is present
+      // - true: All media will autoplay, regardless of individual setting
+      // - false: No media will autoplay, regardless of individual setting
+      autoPlayMedia: null,
+
+      // Global override for preloading lazy-loaded iframes
+      // - null: Iframes with data-src AND data-preload will be loaded when within
+      //   the viewDistance, iframes with only data-src will be loaded when visible
+      // - true: All iframes with data-src will be loaded when within the viewDistance
+      // - false: All iframes with data-src will be loaded only when visible
+      preloadIframes: null,
+
+      // Number of milliseconds between automatically proceeding to the
+      // next slide, disabled when set to 0, this value can be overwritten
+      // by using a data-autoslide attribute on your slides
+      autoSlide: 0,
+
+      // Stop auto-sliding after user input
+      autoSlideStoppable: true,
+
+      // Use this method for navigation when auto-sliding
+      autoSlideMethod: Reveal.navigateNext,
+
+      // Specify the average time in seconds that you think you will spend
+      // presenting each slide. This is used to show a pacing timer in the
+      // speaker view
+      defaultTiming: 120,
+
+      // Enable slide navigation via mouse wheel
+      mouseWheel: false,
+
+      // Hide cursor if inactive
+      hideInactiveCursor: true,
+
+      // Time before the cursor is hidden (in ms)
+      hideCursorTime: 5000,
+
+      // Hides the address bar on mobile devices
+      hideAddressBar: true,
+
+      // Opens links in an iframe preview overlay
+      // Add `data-preview-link` and `data-preview-link="false"` to customise each link
+      // individually
+      previewLinks: false,
+
+      // Transition speed
+      transitionSpeed: 'default', // default/fast/slow
+
+      // Transition style for full page slide backgrounds
+      backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+
+      // Number of slides away from the current that are visible
+      viewDistance: 3,
+
+      // Parallax background image
+      parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+      // Parallax background size
+      parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+
+      // Number of pixels to move the parallax background per slide
+      // - Calculated automatically unless specified
+      // - Set to 0 to disable movement along an axis
+      parallaxBackgroundHorizontal: null,
+      parallaxBackgroundVertical: null,
+
+      // The display mode that will be used to show slides
+      display: 'block',
+
+      {% if page.transition %}
+        transition: '{{page.transition}}',
+      {% else %}
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+      {% endif %}
+      // Optional reveal.js plugins
+      dependencies: [{
+          src: '{{ "/assets/vendor/reveal.js/lib/js/classList.js" | prepend: site.baseurl }}',
+          condition: function () {
+            return !document.body.classList;
+          }
+        },
+        {
+          src: '{{ "/assets/vendor/reveal.js/plugin/markdown/marked.js" | prepend: site.baseurl }}',
+          condition: function () {
+            return !!document.querySelector('[data-markdown]');
+          }
+        },
+        {
+          src: '{{ "/assets/vendor/reveal.js/plugin/markdown/markdown.js" | prepend: site.baseurl }}',
+          condition: function () {
+            return !!document.querySelector('[data-markdown]');
+          }
+        },
+        {
+          src: '{{ "/assets/vendor/reveal.js/plugin/highlight/highlight.js" | prepend: site.baseurl }}',
+          async: true,
+          condition: function () {
+            return !!document.querySelector('pre code');
+          },
+          callback: function () {
+            hljs.initHighlightingOnLoad();
+          }
+        },
+        {
+          src: '{{ "/assets/vendor/reveal.js/plugin/zoom-js/zoom.js" | prepend: site.baseurl }}',
+          async: true
+        },
+        {
+          src: '{{ "/assets/vendor/reveal.js/plugin/notes/notes.js" | prepend: site.baseurl }}',
+          async: true
+        }
+      ]
+    });
+  </script>
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>

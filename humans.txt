@@ -1,0 +1,9 @@
+/* TEAM */
+	Name: Moritz Maehr
+	Site: https://github.com/maehr/
+	Twitter: @moritzmaehr
+	From: Zurich, Switzerland
+
+/* SITE */
+	Language: English
+	Doctype: HTML5

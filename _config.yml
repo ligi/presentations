@@ -1,0 +1,6 @@
+title: "Academic Reveal Template"
+description: "Write beautiful academic presentations with distraction-free Markdown and Reveal.js."
+plugins:
+  - jekyll-default-layout
+  - jekyll-relative-links
+  - jekyll-titles-from-headings

@@ -1,0 +1,26 @@
+github:
+- .github/*
+
+src:
+- .editorconfig
+- .gitattributes
+- .github
+- .gitignore
+- .htaccess
+- 404.md
+- Gemfile
+- Gemfile.lock
+- README.md
+- _config.yml
+- _layouts
+- android-chrome-192x192.png
+- android-chrome-512x512.png
+- apple-touch-icon.png
+- assets
+- favicon-16x16.png
+- favicon-32x32.png
+- favicon.ico
+- humans.txt
+- index.md
+- robots.txt
+- site.webmanifest
